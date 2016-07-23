@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+var Application = require('./lib/application');
+
+global.app = new Application();
+global.app.startServer();
