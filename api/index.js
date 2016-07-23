@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
 router.get('/data', function(req, res) {
   var db = global.app.mongodb;
-  db.getData(req.body, function(err, docs) {
+  db.getData(req.query, function(err, docs) {
     if (err) {
       res.send(err);
     } else {
