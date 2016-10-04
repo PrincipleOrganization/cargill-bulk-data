@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 
@@ -8,19 +10,15 @@ router.get('/', function(req, res) {
 });
 
 router.get('/data', function(req, res) {
-  var db = global.app.mongodb;
-  db.getData(req.query, function(err, docs) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(docs);
-    }
+  var db = global.app.db;
+  db.getAllData(function(docs) {
+    res.json(docs);
   });
 });
 
 router.post('/data', function(req, res) {
-  var db = global.app.mongodb;
-  db.addToData(req.body, function(err, rec) {
+  var db = global.app.db;
+  db.addData(req.body, function(err, rec) {
     if (err) {
       res.send(err);
     } else {

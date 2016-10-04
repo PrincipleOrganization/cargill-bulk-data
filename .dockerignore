@@ -1,0 +1,8 @@
+node_modules
+.git
+.gitignore
+db
+run.local.sh
+rethinkdb.local.conf
+journal
+_tmp

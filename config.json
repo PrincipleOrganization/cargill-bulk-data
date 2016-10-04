@@ -1,10 +1,8 @@
 {
-  "db": {
-    "base": "kernel",
-    "port": 27017,
-    "host": "localhost"
-  },
-  "server": {
-    "port": 5000
-  }
+    "db": {
+        "db": "bulkdata"
+    },
+    "server": {
+        "port": 4000
+    }
 }
