@@ -1,6 +1,8 @@
 {
     "db": {
-        "db": "bulkdata"
+        "base": "bulkdata",
+        "host": "127.0.0.1",
+        "port": "27017"
     },
     "server": {
         "port": 4000

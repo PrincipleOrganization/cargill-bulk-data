@@ -10,19 +10,30 @@ ADD . $workdir
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN chmod 755 $workdir
+
+#Preparing
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install apt-utils -y
 RUN apt-get install curl -y
 RUN apt-get install wget -y
+
+# NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 RUN cd $workdir
 RUN npm i
-RUN source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | tee /etc/apt/sources.list.d/rethinkdb.list
-RUN wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | apt-key add -
+
+# MongoB
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 RUN apt-get update
-RUN apt-get install rethinkdb -y
-RUN cd $workdir
+RUN apt-get install mongodb-org -y
+RUN mkdir db
+RUN mkdir db/repair
+RUN touch db/mongod.log
+
+# Run file
+RUN chmod 755 run.sh
 
 EXPOSE 4000
 

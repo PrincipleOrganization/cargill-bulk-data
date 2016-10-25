@@ -11,7 +11,10 @@ router.get('/', function(req, res) {
 
 router.get('/data', function(req, res) {
   var db = global.app.db;
-  db.getAllData(function(docs) {
+  db.getData(req.query, function(err, docs) {
+    if (err) {
+      next();
+    }
     res.json(docs);
   });
 });

@@ -3,6 +3,7 @@ node_modules
 .gitignore
 db
 run.local.sh
-rethinkdb.local.conf
+mongodb.local.yaml
 journal
 _tmp
+Dockerfile

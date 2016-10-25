@@ -1,0 +1,19 @@
+systemLog:
+  destination: file
+  path: "/kernel-bulk-data/db/mongod.log"
+  logAppend: true
+storage:
+  dbPath: "/kernel-bulk-data/db"
+  repairPath: "/kernel-bulk-data/db/repair"
+  journal:
+    enabled: true
+  directoryPerDB: true
+  indexBuildRetry: true
+processManagement:
+  fork: true
+  pidFilePath: "/kernel-bulk-data/mongodb.pid"
+net:
+  bindIp: 127.0.0.1
+  port: 27017
+setParameter:
+  enableLocalhostAuthBypass: false
