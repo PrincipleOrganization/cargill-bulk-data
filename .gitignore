@@ -1,4 +1,33 @@
+# Node.js
 node_modules
+
+Optional npm cache directory
+.npm
+
+# Runtime data
+*.pid
+
+# Database
 db
 journal
 _tmp
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Local files
+mongodb.local.yaml
+run.local.sh
