@@ -3,12 +3,6 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res) {
-  res.json({
-    api_version: 1
-  });
-});
-
 router.get('/data', function(req, res) {
   var db = global.app.db;
   db.getData(req.query, function(err, docs) {

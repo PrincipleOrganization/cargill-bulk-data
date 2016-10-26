@@ -1,3 +1,7 @@
+# Builds
+client/public
+client/index.html
+
 # Node.js
 node_modules
 
