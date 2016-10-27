@@ -1,6 +1,7 @@
 # Builds
 client/public
 client/index.html
+dist
 
 # Node.js
 node_modules
